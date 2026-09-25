@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🛰️ GNSS Lock: Will you go on a date with Yam?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Canvas for floating particles, coordinates and confetti -->
+  <canvas id="bg-canvas"></canvas>
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Terminal Loading Overlay -->
+  <div id="terminal-loader" class="terminal-overlay">
+    <div class="terminal-window">
+      <div class="terminal-bar">
+        <div class="window-buttons">
+          <span class="btn-dot dot-red"></span>
+          <span class="btn-dot dot-yellow"></span>
+          <span class="btn-dot dot-green"></span>
+        </div>
+        <span class="terminal-title">bash — geomatics_survey_feelings.sh</span>
+      </div>
+      <div class="terminal-body" id="terminal-text">
+        <!-- Terminal lines will type here -->
+      </div>
+      <button id="skip-btn" class="skip-btn">Skip Calibration ⚡</button>
+    </div>
+  </div>
+
+  <!-- Main Web App -->
+  <main id="app" class="main-container hidden">
+    <!-- Floating Quick Nav / Status Bar -->
+    <header class="status-bar">
+      <div class="branch-pill">
+        <span class="git-icon">🛰️</span>
+        <span class="branch-name">UTM 44N • RTK Fixed</span>
+      </div>
+      <div class="status-center">
+        <span class="status-indicator"></span>
+        <span>Status: 100% Surveying A Future With You</span>
+      </div>
+      <div class="audio-toggle" id="audio-toggle" title="Toggle cute sound vibes">
+        <span id="audio-icon">🎵</span>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="badge-pill">📍 Spatial Alert: High-Precision Coordinate Match @ WRC Pokhara</div>
+      <h1 class="hero-title">
+        Hello Beautiful <span class="wave">👋</span><br>
+        <span class="gradient-text">All my coordinates lead straight to you.</span>
+      </h1>
+      <p class="hero-sub">
+        I'm a Geomatics Engineering student at IOE WRC Pokhara. I could be running traverse calculations, leveling benchmarks, or processing satellite data, but instead I sat down, calibrated my Total Station, and mapped out this entire website just to ask you one question... 📐🗺️✨
+      </p>
+      <div class="terminal-code-snippet">
+        <span class="token-keyword">const</span> spatialSurvey = {<br>
+        &nbsp;&nbsp;surveyor: <span class="token-string">"Yam Chhetri (BGE, WRC Pokhara)"</span>,<br>
+        &nbsp;&nbsp;datum: <span class="token-string">"WGS 84 / UTM Zone 44N"</span>,<br>
+        &nbsp;&nbsp;target: <span class="token-string">"The prettiest girl reading this 💖"</span>,<br>
+        &nbsp;&nbsp;closureError: <span class="token-num">0.000m</span>, <span class="token-comment">// Absolute perfection</span><br>
+        &nbsp;&nbsp;status: <span class="token-string">"Completely lost in your contours"</span><br>
+        };
+      </div>
+      <a href="#the-big-ask" class="cta-scroll-btn">Proceed to Field Evaluation ↓</a>
+    </section>
+
+    <!-- Geomatics Portfolio / Spec Sheet Card -->
+    <section class="section specs-section">
+      <h2 class="section-title">Candidate Profile & Geomatics Specs 📐</h2>
+      <p class="section-subtitle">Why I meet all the precision standards to be your date:</p>
+
+      <div class="specs-grid">
+        <div class="spec-card">
+          <div class="spec-icon">☕</div>
+          <h3>Lakeside Topographic Chai & Coffee Pipeline</h3>
+          <p>Proficient in scouting the best vantage points around Lakeside, securing peaceful corner tables with Phewa views, and guaranteeing 0.00% closure error on snacks & momos.</p>
+          <div class="spec-tag">Azimuth: Direct to Cafe</div>
+        </div>
+
+        <div class="spec-card">
+          <div class="spec-icon">🛵</div>
+          <h3>Pokhara Scooter Traverse API</h3>
+          <p>Smooth scooter cruising along Pame lake shores and Sarangkot heights. Seamless navigation through Pokhara's winding contours, zero bumps, and maximum comfort.</p>
+          <div class="spec-tag">Navigation: 100% Smooth Terrain</div>
+        </div>
+
+        <div class="spec-card">
+          <div class="spec-icon">📸</div>
+          <h3>Drone Photogrammetry & Aesthetic Portraits</h3>
+          <p>Trained in high-res spatial imagery. Golden hour portraits with Machhapuchhre & lake backdrops, 0.5x wide-angle mastery, and unlimited patient retakes until you love the shot.</p>
+          <div class="spec-tag">Resolution: Sub-Centimeter Orthomosaic</div>
+        </div>
+
+        <div class="spec-card">
+          <div class="spec-icon">🗺️</div>
+          <h3>Date Itinerary GIS Engine</h3>
+          <p>No more <em>"kata jane, k garne?"</em> dilemmas. Pre-computed scenic date trajectories: sunset chai at Sarangkot, peaceful boating at Begnas, and lakeside evening strolls.</p>
+          <div class="spec-tag">Optimal Path: Geodesic & Romantic</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why You? (Feature Release Notes) -->
+    <section class="section changelog-section">
+      <h2 class="section-title">Field Notes: Why It Had To Be You 💖</h2>
+      <div class="changelog-box">
+        <div class="log-item">
+          <span class="log-tag log-added">LOCKED</span>
+          <div class="log-content">
+            <h4>Your Smile's Elevation</h4>
+            <p>Caused major seismic tremors in my heart during surveying fieldwork at WRC Pokhara. Boosted happiness metrics by +500% whenever you are near.</p>
+          </div>
+        </div>
+        <div class="log-item">
+          <span class="log-tag log-fixed">CALIBRATED</span>
+          <div class="log-content">
+            <h4>Magnetic Declination Anomaly</h4>
+            <p>Discovered an unusual compass anomaly where my needle completely ignores true North and points exclusively towards wherever you are.</p>
+          </div>
+        </div>
+        <div class="log-item">
+          <span class="log-tag log-optimized">OPTIMIZED</span>
+          <div class="log-content">
+            <h4>Weekend Spatial Schedule</h4>
+            <p>Deprecating long solitary hours in QGIS and ArcGIS in favor of taking you out on the most picturesque dates across Pokhara.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Big Ask / Interactive Playground -->
+    <section id="the-big-ask" class="section ask-section">
+      <div class="ask-card">
+        <div class="terminal-bar">
+          <div class="window-buttons">
+            <span class="btn-dot dot-red"></span>
+            <span class="btn-dot dot-yellow"></span>
+            <span class="btn-dot dot-green"></span>
+          </div>
+          <span class="terminal-title">spatial_triangulation_evaluator.py</span>
+        </div>
+        
+        <div class="ask-content">
+          <div class="heart-pulse-icon">🧭</div>
+          <h2 class="question-text">Will you go on a date with me?</h2>
+          <p class="question-sub">Field Warning: Saying yes triggers instant scenic views, warm coffee, and butterflies.</p>
+
+          <div class="button-zone" id="button-zone">
+            <button id="yes-btn" class="btn btn-yes">YES! Lock the Coordinates 🥰</button>
+            <button id="no-btn" class="btn btn-no">No 💔</button>
+          </div>
+          <p id="tease-text" class="tease-text">&nbsp;</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hidden Date Planner / Success Modal Screen -->
+    <div id="success-screen" class="success-overlay hidden">
+      <div class="success-card">
+        <div class="confetti-badge">🎉 COORDINATE FIX: RTK LOCKED! (CLOSURE ERROR: 0.000m)</div>
+        <h2 class="success-title">YAY! Our Coordinates Aligned! 🥂✨</h2>
+        <p class="success-desc">
+          The most accurate survey calculation ever made! Choose our Pokhara date rendezvous:
+        </p>
+
+        <form id="date-form" class="date-form">
+          <div class="form-group">
+            <label for="date-type">Choose Date Vibe in Pokhara 🕯️</label>
+            <select id="date-type" class="form-control">
+              <option value="Lakeside Sunset Walk & Aesthetic Cafe 🍕☕">Lakeside Sunset Walk & Aesthetic Cafe 🍕☕</option>
+              <option value="Sarangkot High-Elevation Chai with Mountain Views 🏔️🌅">Sarangkot High-Elevation Chai with Mountain Views 🏔️🌅</option>
+              <option value="Pame Lake Shore Breeze & Scooter Drive 🛵🌊">Pame Lake Shore Breeze & Scooter Drive 🛵🌊</option>
+              <option value="Peaceful Begnas Lake Escape & Boat Ride 🚣‍♂️🌲">Peaceful Begnas Lake Escape & Boat Ride 🚣‍♂️🌲</option>
+              <option value="Cozy Acoustic Dinner near Hallanchowk 🍰✨">Cozy Acoustic Dinner near Hallanchowk 🍰✨</option>
+              <option value="WRC Campus Canteen Chiya & Field Walk 🎓🎒">WRC Campus Canteen Chiya & Field Walk 🎓🎒</option>
+              <option value="Surprise Expedition (Yam's Topographic Pick) 🗺️🎲">Surprise Expedition (Yam's Topographic Pick) 🗺️🎲</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="date-day">Pick a Day 📅</label>
+            <input type="date" id="date-day" class="form-control" required>
+          </div>
+
+          <button type="submit" id="confirm-date-btn" class="btn btn-confirm">
+            Pin the Location 🚀
+          </button>
+        </form>
+
+        <div id="final-ticket" class="final-ticket hidden">
+          <div class="ticket-header">
+            <span>🎟️ OFFICIAL FIELD SURVEY PASS</span>
+            <span>PASS #WRC-GEO-001</span>
+          </div>
+          <div class="ticket-body">
+            <p><strong>Survey Team:</strong> You & Yam 💑</p>
+            <p><strong>Location Vibe:</strong> <span id="ticket-vibe"></span></p>
+            <p><strong>Scheduled Date:</strong> <span id="ticket-date"></span></p>
+            <p><strong>Dress code:</strong> Casual & pretty — ready for photos & good vibes ✨</p>
+          </div>
+          <div class="ticket-footer">
+            <span>Status: Datum Fixed & Georeferenced 📍</span>
+          </div>
+          <div class="ticket-actions">
+            <a id="whatsapp-send-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+              Send coordinates to Yam on WhatsApp 💬
+            </a>
+            <button id="screenshot-btn" class="btn btn-secondary">📸 Save / Copy Confirmation</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Handcrafted with ❤️ by Yam Chhetri — Geomatics Engineer from IOE WRC Pokhara for someone special.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
